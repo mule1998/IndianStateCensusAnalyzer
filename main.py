@@ -1,17 +1,17 @@
-import pandas as pd
-
-def census():
-    '''
-    Adding data from csv file
-    '''
-    csv=pd.read_csv('C:/Users/Shubham/Desktop/IndianCensusAnalyzer/IndianCensus - Sheet1.csv')
-    return csv
+﻿import pandas as pd
 
 
-def no_of_records():
-    '''Finding number of records(no of rows and columns) in csv file'''
-    csv=census()
-    return csv.shape[0]
+def state_census_problem(file_name):
+    """This function is for read the csv data"""
+    csv_data = pd.read_csv(file_name)
+    return csv_data
 
-data2=no_of_records()
 
+def count_records(file_name):
+    """This function is for the find shape of the data."""
+    csv_data = state_census_problem(file_name)
+    return csv_data.shape[0]
+
+
+data2 = count_records("IndianCensus - Sheet1.csv")
+print(data2)
